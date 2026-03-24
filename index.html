@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Mohamed Mushthaq — Digital Marketing Executive</title>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C49BTZ0MCN"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-C49BTZ0MCN');</script>
+<!-- Three.js for 3D background -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="ld-frame">
+    <div class="ld-title">MUSHTHAQ</div>
+    <div class="ld-sub">DIGITAL MARKETING EXECUTIVE</div>
+    <div style="height:1.5rem"></div>
+    <div class="ld-progress-wrap">
+      <div class="ld-progress-track"><div class="ld-progress-fill"></div></div>
+      <div class="ld-pct">0%</div>
+    </div>
+    <div class="ld-msg">INITIALIZING...</div>
+    <div style="height:.8rem"></div>
+    <div class="ld-dots">
+      <div class="ld-dot"></div><div class="ld-dot"></div><div class="ld-dot"></div>
+      <div class="ld-dot"></div><div class="ld-dot"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ACHIEVEMENT TOAST -->
+<div id="ach-toast">
+  <div class="ach-inner">
+    <div id="ach-ico" class="ach-ico">&#127942;</div>
+    <div>
+      <div class="ach-tag">ACHIEVEMENT UNLOCKED</div>
+      <div id="ach-name" class="ach-name">Portfolio Loaded</div>
+      <div id="ach-xp-text" class="ach-xp">+50 XP</div>
+    </div>
+    <div id="ach-sub-text" style="display:none"></div>
+    <div class="ach-bar"></div>
+  </div>
+</div>
+
+<!-- LEVEL UP -->
+<div id="lvlup">
+  <div class="lvlup-inner">
+    <div class="lvlup-text">LEVEL UP!</div>
+    <div class="lvlup-sub">RANK INCREASED</div>
+  </div>
+</div>
+
+<!-- CURSOR -->
+<div id="cur-dot"></div>
+<div id="cur-ring"></div>
+<div id="cur-aim"></div>
+
+<!-- BACKGROUNDS -->
+<canvas id="three-canvas"></canvas>
+<canvas id="matrix-canvas"></canvas>
+<canvas id="bg-canvas2"></canvas>
+<div class="vignette"></div>
+<div class="noise"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <a href="#hero" class="nav-logo">MUSHTHAQ</a>
+    <span class="nav-badge">LVL 5</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#hero"       data-n="01">HOME</a></li>
+    <li><a href="#about"      data-n="02">ABOUT</a></li>
+    <li><a href="#skills"     data-n="03">SKILLS</a></li>
+    <li><a href="#experience" data-n="04">CAREER</a></li>
+    <li><a href="#projects"   data-n="05">PROJECTS</a></li>
+    <li><a href="#designs"    data-n="06">DESIGNS</a></li>
+    <li><a href="#contact"    data-n="07">CONTACT</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="nav-hp">
+      <div class="nav-hp-row"><span class="hp-lbl">HP</span><div class="hp-bar"><div class="hp-fill hp"></div></div></div>
+      <div class="nav-hp-row"><span class="hp-lbl">MP</span><div class="hp-bar"><div class="hp-fill mp"></div></div></div>
+      <div class="nav-hp-row"><span class="hp-lbl">XP</span><div class="hp-bar"><div class="hp-fill xp"></div></div></div>
+    </div>
+    <div class="nav-lvl">LVL 5</div>
+  </div>
+  <button class="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="pdots">
+  <div class="pdot on"></div><div class="pdot"></div><div class="pdot"></div>
+  <div class="pdot"></div><div class="pdot"></div><div class="pdot"></div><div class="pdot"></div>
+</div>
+
+<!-- ═══════ HERO ═══════ -->
+<section id="hero">
+<div class="container">
+<div class="hero-grid">
+  <div>
+    <div class="hero-hud hanim rv">PLAYER_PROFILE // DIGITAL_WARRIOR_CLASS</div>
+    <h1 class="hero-name hanim rv d1">
+      <span class="hn1">MOHAMED</span>
+      <span class="hn2">MUSHTHAQ</span>
+    </h1>
+    <div class="hero-role hanim rv d2">
+      <span class="role-prefix">&gt;&gt;</span>
+      <span id="typed">DIGITAL MARKETING EXECUTIVE</span>
+      <span class="tcur">_</span>
+    </div>
+    <p class="hero-desc hanim rv d3">Creative content writer &amp; digital designer wielding <strong>SEO content writing</strong>, WordPress mastery, Canva design, and AI-powered creativity. MSc Computer Science &bull; Immediate Joiner.</p>
+    <div class="hero-btns hanim rv d4">
+      <a href="#projects" class="btn btn-plasma">&#9654; VIEW QUESTS</a>
+      <a href="#contact"  class="btn btn-glitch">&#128225; SEND SIGNAL</a>
+    </div>
+    <div class="hud-stats hanim rv d5">
+      <div class="hud-grid">
+        <div class="hud-stat"><div class="hud-val" data-count="25" data-suffix="+">0+</div><div class="hud-lbl">SEO BLOGS</div><div class="hud-seg"><div class="seg on"></div><div class="seg on"></div><div class="seg on"></div><div class="seg on"></div><div class="seg"></div></div></div>
+        <div class="hud-stat"><div class="hud-val" data-count="1">0</div><div class="hud-lbl">COMPANIES</div><div class="hud-seg"><div class="seg on"></div><div class="seg on"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div></div></div>
+        <div class="hud-stat"><div class="hud-val" data-count="1" data-suffix="yr+">0</div><div class="hud-lbl">EXPERIENCE</div><div class="hud-seg"><div class="seg on"></div><div class="seg on"></div><div class="seg on"></div><div class="seg"></div><div class="seg"></div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-vis hanim rv d3">
+    <div class="vis-3d">
+      <div class="core-3d">
+        <div class="core-face core-front">MM</div>
+        <div class="core-glow"></div>
+      </div>
+      <div class="orbit-ring or1"><div class="orb-node">&#9999;&#65039;</div></div>
+      <div class="orbit-ring or2"><div class="orb-node">&#127912;</div></div>
+      <div class="orbit-ring or3"><div class="orb-node">&#128202;</div></div>
+    </div>
+    <div class="holo-badge" style="top:5%;left:0;border-color:rgba(0,255,204,.3);color:var(--c1);animation-delay:0s"><span class="hb-dot" style="background:var(--c1)"></span>SEO MASTER</div>
+    <div class="holo-badge" style="top:22%;right:-8%;border-color:rgba(255,0,102,.3);color:var(--c2);animation-delay:-1.5s"><span class="hb-dot" style="background:var(--c2)"></span>WP EXPERT</div>
+    <div class="holo-badge" style="bottom:22%;left:-5%;border-color:rgba(255,238,0,.3);color:var(--c3);animation-delay:-2.5s"><span class="hb-dot" style="background:var(--c3)"></span>AI CREATOR</div>
+    <div class="holo-badge" style="bottom:5%;right:-5%;border-color:rgba(0,170,255,.3);color:var(--c5);animation-delay:-1s"><span class="hb-dot" style="background:var(--c5)"></span>CANVA PRO</div>
+    <div class="vis-xp">
+      <div class="vxp-row"><span class="vxp-l">SEO</span><div class="vxp-t"><div class="vxp-f" style="width:90%;color:var(--c1);background:var(--c1)"></div></div></div>
+      <div class="vxp-row"><span class="vxp-l">WP</span><div class="vxp-t"><div class="vxp-f" style="width:85%;color:var(--c5);background:var(--c5)"></div></div></div>
+      <div class="vxp-row"><span class="vxp-l">DES</span><div class="vxp-t"><div class="vxp-f" style="width:90%;color:var(--c2);background:var(--c2)"></div></div></div>
+      <div class="vxp-row"><span class="vxp-l">AI</span><div class="vxp-t"><div class="vxp-f" style="width:82%;color:var(--c4);background:var(--c4)"></div></div></div>
+      <div class="vxp-row"><span class="vxp-l">PY</span><div class="vxp-t"><div class="vxp-f" style="width:65%;color:var(--c3);background:var(--c3)"></div></div></div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- ═══════ ABOUT ═══════ -->
+<section id="about">
+<div class="container">
+<div class="about-grid">
+  <div class="rv-l">
+    <div class="holo-card char-sheet" data-tilt>
+      <div class="char-header">
+        <div class="char-hex-wrap">
+          <div class="char-hex">MM</div>
+          <div class="char-hex-ring"></div>
+          <div class="char-lvl-badge">LVL 5</div>
+        </div>
+        <div class="char-name-card">MOHAMED MUSHTHAQ</div>
+        <div class="char-class">// DIGITAL MARKETING EXECUTIVE</div>
+        <div class="char-avail"><div class="avl-dot"></div>IMMEDIATE JOINER</div>
+      </div>
+      <div class="char-body">
+        <div class="stat-row"><div class="stat-head"><span>SEO POWER</span><span class="stat-v">90/100</span></div><div class="stat-bar"><div class="stat-fill sf-seo" data-w="90"></div></div></div>
+        <div class="stat-row"><div class="stat-head"><span>WP MASTERY</span><span class="stat-v">85/100</span></div><div class="stat-bar"><div class="stat-fill sf-wp" data-w="85"></div></div></div>
+        <div class="stat-row"><div class="stat-head"><span>DESIGN ART</span><span class="stat-v">90/100</span></div><div class="stat-bar"><div class="stat-fill sf-des" data-w="90"></div></div></div>
+        <div class="stat-row"><div class="stat-head"><span>AI CRAFT</span><span class="stat-v">82/100</span></div><div class="stat-bar"><div class="stat-fill sf-ai" data-w="82"></div></div></div>
+        <div class="stat-row"><div class="stat-head"><span>PYTHON</span><span class="stat-v">65/100</span></div><div class="stat-bar"><div class="stat-fill sf-py" data-w="65"></div></div></div>
+        <div class="char-badges-wrap">
+          <span class="cbadge">MSc CS</span><span class="cbadge">SEO</span><span class="cbadge">WordPress</span>
+          <span class="cbadge">Canva</span><span class="cbadge">Python</span><span class="cbadge">AI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="about-text">
+    <span class="stag rv">CHARACTER PROFILE</span>
+    <h2 class="stitle rv d1">A <span class="gtext">Digital Creator</span><br>Powered by AI</h2>
+    <div class="sline rv d2"></div>
+    <p class="rv d2">Hi! I'm <strong>Mohamed Mushthaq</strong> — a digital marketer with an <em>MSc in Computer Science</em> and a passion for technology, content writing, design, and AI-powered creativity.</p>
+    <p class="rv d3">From <strong>November 2024 to February 2026</strong>, I worked at <em>Zentro Tech</em> (branch of Zentroa, Dubai) producing SEO-optimised blogs, managing WordPress, and monitoring site performance.</p>
+    <p class="rv d4">I also freelanced for <em>Zafigem.com</em> (Singapore) designing website banners and maintaining visual consistency across the e-commerce site.</p>
+    <div class="chips rv d4">
+      <span class="chip">SEO Writing</span><span class="chip">WordPress</span><span class="chip">Canva Design</span>
+      <span class="chip">Google Analytics</span><span class="chip">Python</span><span class="chip">AI Prompt Eng.</span>
+      <span class="chip">Social Media</span><span class="chip">Content Strategy</span>
+    </div>
+    <h3 class="rv d3">AI ARSENAL EQUIPPED</h3>
+    <div class="ai-tools-grid">
+      <div class="card ai-tool-card rv d1" data-tilt><div class="atc-ico">&#129302;</div><div><div class="atc-name">ChatGPT</div><div class="atc-type">Content Gen</div></div><div class="atc-lvl">MAX</div></div>
+      <div class="card ai-tool-card rv d2" data-tilt><div class="atc-ico">&#10024;</div><div><div class="atc-name">Gemini</div><div class="atc-type">Research</div></div><div class="atc-lvl">LV4</div></div>
+      <div class="card ai-tool-card rv d3" data-tilt><div class="atc-ico">&#128269;</div><div><div class="atc-name">Perplexity</div><div class="atc-type">AI Search</div></div><div class="atc-lvl">LV4</div></div>
+      <div class="card ai-tool-card rv d1" data-tilt><div class="atc-ico">&#9989;</div><div><div class="atc-name">Grammarly</div><div class="atc-type">Proofread</div></div><div class="atc-lvl">MAX</div></div>
+      <div class="card ai-tool-card rv d2" data-tilt><div class="atc-ico">&#127912;</div><div><div class="atc-name">Canva AI</div><div class="atc-type">Design</div></div><div class="atc-lvl">LV5</div></div>
+      <div class="card ai-tool-card rv d3" data-tilt><div class="atc-ico">&#9889;</div><div><div class="atc-name">Grok</div><div class="atc-type">Assistant</div></div><div class="atc-lvl">LV3</div></div>
+    </div>
+    <div style="margin-top:2.5rem;display:flex;gap:1rem;flex-wrap:wrap" class="rv d5">
+      <a href="#experience" class="btn btn-plasma">&#9654; CAREER LOG</a>
+      <a href="#contact" class="btn btn-glitch">&#128225; CONNECT</a>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- ═══════ SKILLS ═══════ -->
+<section id="skills">
+<div class="container">
+  <span class="stag rv">SKILL TREE</span>
+  <h2 class="stitle rv d1">Skills &amp; <span class="gtext">Expertise</span></h2>
+  <div class="sline rv d2"></div>
+  <div class="skills-layout">
+    <div class="card rv-l d1" style="padding:2rem">
+      <div class="sk-col">
+        <h4>&#128269; DIGITAL MARKETING &amp; SEO</h4>
+        <div class="sk-xp"><div class="sk-xp-top"><span class="sk-xp-name">SEO Blog Writing</span><div class="sk-xp-info"><span class="sk-xp-pct">90%</span><div class="sk-stars"><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span></div></div></div><div class="sk-track"><div class="sk-fill sf1" data-w="90"></div></div></div>
+        <div class="sk-xp"><div class="sk-xp-top"><span class="sk-xp-name">Keyword Research</span><div class="sk-xp-info"><span class="sk-xp-pct">85%</span><div class="sk-stars"><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star off">&#9733;</span></div></div></div><div class="sk-track"><div class="sk-fill sf2" data-w="85"></div></div></div>
+        <div class="sk-xp"><div class="sk-xp-top"><span class="sk-xp-name">On-Page SEO</span><div class="sk-xp-info"><span class="sk-xp-pct">85%</span><div class="sk-stars"><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star off">&#9733;</span></div></div></div><div class="sk-track"><div class="sk-fill sf3" data-w="85"></div></div></div>
+        <div class="sk-xp"><div class="sk-xp-top"><span class="sk-xp-name">Google Search Console</span><div class="sk-xp-info"><span class="sk-xp-pct">80%</span><div class="sk-stars"><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star off">&#9733;</span></div></div></div><div class="sk-track"><div class="sk-fill sf1" data-w="80"></div></div></div>
+        <div class="sk-xp"><div class="sk-xp-top"><span class="sk-xp-name">Content Strategy</span><div class="sk-xp-info"><span class="sk-xp-pct">80%</span><div class="sk-stars"><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star off">&#9733;</span></div></div></div><div class="sk-track"><div class="sk-fill sf4" data-w="80"></div></div></div>
+        <div class="sk-xp"><div class="sk-xp-top"><span class="sk-xp-name">Google Analytics</span><div class="sk-xp-info"><span class="sk-xp-pct">72%</span><div class="sk-stars"><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star off">&#9733;</span><span class="sk-star off">&#9733;</span></div></div></div><div class="sk-track"><div class="sk-fill sf2" data-w="72"></div></div></div>
+      </div>
+    </div>
+    <div class="card rv-r d1" style="padding:2rem">
+      <div class="sk-col">
+        <h4>&#127912; DESIGN &amp; TECHNOLOGY</h4>
+        <div class="sk-xp"><div class="sk-xp-top"><span class="sk-xp-name">Canva Graphic Design</span><div class="sk-xp-info"><span class="sk-xp-pct">90%</span><div class="sk-stars"><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span></div></div></div><div class="sk-track"><div class="sk-fill sf2" data-w="90"></div></div></div>
+        <div class="sk-xp"><div class="sk-xp-top"><span class="sk-xp-name">WordPress Management</span><div class="sk-xp-info"><span class="sk-xp-pct">85%</span><div class="sk-stars"><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star off">&#9733;</span></div></div></div><div class="sk-track"><div class="sk-fill sf1" data-w="85"></div></div></div>
+        <div class="sk-xp"><div class="sk-xp-top"><span class="sk-xp-name">AI Prompt Engineering</span><div class="sk-xp-info"><span class="sk-xp-pct">82%</span><div class="sk-stars"><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star off">&#9733;</span></div></div></div><div class="sk-track"><div class="sk-fill sf4" data-w="82"></div></div></div>
+        <div class="sk-xp"><div class="sk-xp-top"><span class="sk-xp-name">Social Media Content</span><div class="sk-xp-info"><span class="sk-xp-pct">78%</span><div class="sk-stars"><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star off">&#9733;</span></div></div></div><div class="sk-track"><div class="sk-fill sf3" data-w="78"></div></div></div>
+        <div class="sk-xp"><div class="sk-xp-top"><span class="sk-xp-name">Python / Data Science</span><div class="sk-xp-info"><span class="sk-xp-pct">65%</span><div class="sk-stars"><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star off">&#9733;</span><span class="sk-star off">&#9733;</span></div></div></div><div class="sk-track"><div class="sk-fill sf2" data-w="65"></div></div></div>
+        <div class="sk-xp"><div class="sk-xp-top"><span class="sk-xp-name">Website Monitoring</span><div class="sk-xp-info"><span class="sk-xp-pct">78%</span><div class="sk-stars"><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star off">&#9733;</span></div></div></div><div class="sk-track"><div class="sk-fill sf1" data-w="78"></div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="skill-hex-grid rv d3">
+    <div class="card sk-hex-card" data-tilt><div class="sk-hex-ico" style="background:linear-gradient(135deg,var(--c4),var(--c1))">&#128269;</div><div class="sk-hex-name">SEO</div><div class="sk-hex-lvl"><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span></div><div class="sk-hex-desc">Blog writing, keyword research, on-page optimization</div></div>
+    <div class="card sk-hex-card" data-tilt><div class="sk-hex-ico" style="background:linear-gradient(135deg,var(--c5),var(--c1))">&#127760;</div><div class="sk-hex-name">WORDPRESS</div><div class="sk-hex-lvl"><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star off">&#9733;</span></div><div class="sk-hex-desc">CMS, plugins, backups, monitoring</div></div>
+    <div class="card sk-hex-card" data-tilt><div class="sk-hex-ico" style="background:linear-gradient(135deg,var(--c2),var(--c3))">&#127912;</div><div class="sk-hex-name">CANVA</div><div class="sk-hex-lvl"><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span></div><div class="sk-hex-desc">Banners, social creatives, brand design</div></div>
+    <div class="card sk-hex-card" data-tilt><div class="sk-hex-ico" style="background:linear-gradient(135deg,var(--c4),var(--c2))">&#129302;</div><div class="sk-hex-name">AI TOOLS</div><div class="sk-hex-lvl"><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star off">&#9733;</span></div><div class="sk-hex-desc">ChatGPT, Gemini, Perplexity, prompt engineering</div></div>
+    <div class="card sk-hex-card" data-tilt><div class="sk-hex-ico" style="background:linear-gradient(135deg,var(--c5),var(--c4))">&#128241;</div><div class="sk-hex-name">SOCIAL MEDIA</div><div class="sk-hex-lvl"><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star off">&#9733;</span></div><div class="sk-hex-desc">Instagram, Facebook, LinkedIn</div></div>
+    <div class="card sk-hex-card" data-tilt><div class="sk-hex-ico" style="background:linear-gradient(135deg,var(--c3),var(--c5))">&#128013;</div><div class="sk-hex-name">PYTHON</div><div class="sk-hex-lvl"><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star on">&#9733;</span><span class="sk-star off">&#9733;</span><span class="sk-star off">&#9733;</span></div><div class="sk-hex-desc">Pandas, NumPy, data analysis</div></div>
+  </div>
+  <div class="bubbles rv d4">
+    <span class="bbl bc1">SEO Writing</span><span class="bbl bc2">Creative Design</span><span class="bbl bc3">Time Management</span>
+    <span class="bbl bc1">Research Skills</span><span class="bbl bc4">Collaboration</span><span class="bbl bc3">Data Analysis</span>
+    <span class="bbl bc2">Problem Solving</span><span class="bbl bc1">Social Strategy</span><span class="bbl bc4">Quick Learning</span>
+    <span class="bbl bc3">Digital Awareness</span><span class="bbl bc2">Innovation</span><span class="bbl bc1">Content Planning</span>
+  </div>
+</div>
+</section>
+
+<!-- ═══════ EXPERIENCE ═══════ -->
+<section id="experience">
+<div class="container">
+  <span class="stag rv">MISSION LOG</span>
+  <h2 class="stitle rv d1">Experience &amp; <span class="gtext">Education</span></h2>
+  <div class="sline rv d2"></div>
+  <div class="timeline">
+    <div class="tli rv">
+      <div class="card tlcard"><div class="cc tl"></div><div class="cc br"></div>
+        <span class="tl-tag ttw">&#9654; ACTIVE MISSION // FULL-TIME</span>
+        <div class="tl-title">Digital Marketing Executive</div>
+        <div class="tl-org" style="color:var(--c1)">Zentro Tech &mdash; Branch of Zentroa, Dubai</div>
+        <div class="tl-per">NOV 2024 &mdash; FEB 2026 &bull; THIRUVARUR, INDIA</div>
+        <ul class="tl-list">
+          <li>Wrote &amp; published SEO-optimised blog posts for Zentroa.com and DreamBIG.ae</li>
+          <li>Designed banners, thumbnails &amp; social media graphics using Canva</li>
+          <li>Monitored blog indexing &amp; performance via Google Search Console</li>
+          <li>Managed WordPress CMS — content, plugins, backups, security updates</li>
+          <li>Tracked uptime &amp; performance using UptimeRobot</li>
+        </ul>
+        <div class="tl-tags"><span class="tl-tag-pill tp1">WordPress</span><span class="tl-tag-pill tp1">SEO</span><span class="tl-tag-pill tp1">Canva</span><span class="tl-tag-pill tp1">Analytics</span></div>
+      </div>
+      <div class="tln"><div class="tl-hex tlh-w"></div></div>
+      <div class="tle"></div>
+    </div>
+    <div class="tli rv d1">
+      <div class="tle"></div>
+      <div class="tln"><div class="tl-hex tlh-f"></div></div>
+      <div class="card tlcard"><div class="cc tl"></div><div class="cc br"></div>
+        <span class="tl-tag ttf">&#9733; SIDE QUEST // FREELANCE</span>
+        <div class="tl-title">Website Banner Designer</div>
+        <div class="tl-org" style="color:var(--c3)">Zafigem.com &mdash; Zafi Trading Co., Singapore</div>
+        <div class="tl-per">SEPT 2025 &mdash; DEC 2025 &bull; REMOTE</div>
+        <ul class="tl-list">
+          <li>Designed website banners for product categories, promotions &amp; featured content</li>
+          <li>Maintained visual consistency following brand guidelines</li>
+          <li>Managed website content ensuring accuracy and up-to-date visuals</li>
+        </ul>
+        <div class="tl-tags"><span class="tl-tag-pill tp3">Canva</span><span class="tl-tag-pill tp3">Banner Design</span><span class="tl-tag-pill tp3">Gemini</span></div>
+      </div>
+    </div>
+    <div class="tli rv d2">
+      <div class="card tlcard"><div class="cc tl"></div><div class="cc br"></div>
+        <span class="tl-tag tte">&#127891; TRAINING ARC // EDUCATION</span>
+        <div class="tl-title">Master of Science &mdash; Computer Science</div>
+        <div class="tl-org" style="color:var(--c2)">Bharathidasan University, India</div>
+        <div class="tl-per">2021 &mdash; 2023</div>
+        <ul class="tl-list"><li>Advanced algorithms, data structures &amp; software engineering</li><li>Python, NumPy and Pandas for data analysis</li></ul>
+        <div class="tl-tags"><span class="tl-tag-pill tp2">MSc CS</span><span class="tl-tag-pill tp2">Python</span><span class="tl-tag-pill tp2">Data Science</span></div>
+      </div>
+      <div class="tln"><div class="tl-hex tlh-e"></div></div>
+      <div class="tle"></div>
+    </div>
+    <div class="tli rv d3">
+      <div class="tle"></div>
+      <div class="tln"><div class="tl-hex tlh-e"></div></div>
+      <div class="card tlcard"><div class="cc tl"></div><div class="cc br"></div>
+        <span class="tl-tag tte">&#127891; ORIGIN STORY // EDUCATION</span>
+        <div class="tl-title">Bachelor of Computer Applications</div>
+        <div class="tl-org" style="color:var(--c2)">Bharathidasan University, India</div>
+        <div class="tl-per">2018 &mdash; 2021</div>
+        <ul class="tl-list"><li>Foundation in computer applications, programming &amp; web technologies</li></ul>
+        <div class="tl-tags"><span class="tl-tag-pill tp2">BCA</span><span class="tl-tag-pill tp2">Programming</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="edu-cards">
+    <div class="card edu-card rv d1" data-tilt><div class="edu-hex-ico">&#127891;</div><div class="edu-deg">MSc</div><div class="edu-field">Master of Science &mdash; Computer Science</div><div class="edu-uni">Bharathidasan University, India</div><div class="edu-yr">2021 &mdash; 2023</div></div>
+    <div class="card edu-card rv d2" data-tilt><div class="edu-hex-ico">&#127979;</div><div class="edu-deg">BCA</div><div class="edu-field">Bachelor of Computer Applications</div><div class="edu-uni">Bharathidasan University, India</div><div class="edu-yr">2018 &mdash; 2021</div></div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════ PROJECTS ═══════ -->
+<section id="projects">
+<div class="container">
+  <span class="stag rv">QUEST BOARD</span>
+  <h2 class="stitle rv d1">My <span class="gtext">Projects</span></h2>
+  <div class="sline rv d2"></div>
+  <div class="proj-grid">
+    <div class="card pcard rv d1" data-tilt><div class="pcard-top"><div class="pcard-ico" style="background:linear-gradient(135deg,var(--c4),var(--c1))">&#9999;&#65039;</div><span class="pcard-num">QUEST-01</span></div><div class="pcard-body"><div class="pcard-cat">SEO BLOG CONTENT</div><div class="pcard-title">DreamBIG.ae Blog Series</div><div class="pcard-desc">9 SEO-optimised blog posts for a UAE-based website driving organic traffic.</div><div class="pcard-tools"><span class="ptag">WordPress</span><span class="ptag">ChatGPT</span><span class="ptag">Grammarly</span></div></div></div>
+    <div class="card blog-wide rv d2"><div class="bw-title">&#128221; BLOG LOG &mdash; DREAMBIG.AE</div><ul class="bw-list"><li>Top 10 WordPress Development Companies in UAE</li><li>Top 10 Printer Rental Companies in Dubai</li><li>Top 10 Car Rental Companies in Dubai</li><li>Top 10 Digital Marketing Companies in UAE</li><li>Top 10 Web Design Companies in India</li><li>Top 10 Car Rental Companies in Sharjah</li><li>Top 10 Mobile App Development Companies in UAE</li><li>Top 10 Social Media Marketing Companies in Dubai</li><li>Top 10 Car Rental Companies in Abu Dhabi</li></ul></div>
+    <div class="card blog-wide rv d1"><div class="bw-title">&#128221; BLOG LOG &mdash; ZENTROA.COM</div><ul class="bw-list"><li>Top 10 Travel Companies In Dubai</li><li>10 Easy Ways to Keep Your Website Running Smoothly</li><li>Top 10 WordPress Development Companies in UAE</li><li>Top 20 Digital Marketing Companies In Dubai</li><li>Top 10 Office Furniture Companies in Dubai</li><li>The Best Top 20 SEO Companies In Dubai</li></ul></div>
+    <div class="card pcard rv d2" data-tilt><div class="pcard-top"><div class="pcard-ico" style="background:linear-gradient(135deg,var(--c5),var(--c1))">&#127760;</div><span class="pcard-num">QUEST-02</span></div><div class="pcard-body"><div class="pcard-cat">WEB CONTENT &amp; SEO</div><div class="pcard-title">Zentroa.com SEO Blogs</div><div class="pcard-desc">6 high-ranking articles for a Dubai-based digital agency.</div><div class="pcard-tools"><span class="ptag">WordPress</span><span class="ptag">Canva</span><span class="ptag">Perplexity</span></div></div></div>
+    <div class="card pcard rv d3" data-tilt><div class="pcard-top"><div class="pcard-ico" style="background:linear-gradient(135deg,var(--c2),var(--c3))">&#127912;</div><span class="pcard-num">QUEST-03</span></div><div class="pcard-body"><div class="pcard-cat">BANNER DESIGN</div><div class="pcard-title">Zafigem.com Banners</div><div class="pcard-desc">Modern e-commerce website banners for a Singapore-based brand.</div><div class="pcard-tools"><span class="ptag">Canva</span><span class="ptag">Gemini</span></div></div></div>
+    <div class="card pcard rv d1" data-tilt><div class="pcard-top"><div class="pcard-ico" style="background:linear-gradient(135deg,var(--c4),var(--c2))">&#129302;</div><span class="pcard-num">QUEST-04</span></div><div class="pcard-body"><div class="pcard-cat">AI PROJECTS</div><div class="pcard-title">Prompt Engineering</div><div class="pcard-desc">AI-powered prompts for SEO, meta descriptions, keyword lists, and visuals.</div><div class="pcard-tools"><span class="ptag">ChatGPT</span><span class="ptag">Gemini</span><span class="ptag">Canva AI</span></div></div></div>
+  </div>
+  <div class="prompt-row">
+    <div class="card prom-card rv d1" data-tilt><div class="cc tl"></div><div class="cc br"></div><div class="prom-title">&#129302; AI PROMPT SKILLS</div><ul class="prom-list"><li>Generate SEO Titles &amp; Meta Descriptions</li><li>Produce AI-driven blog ideas and keyword lists</li><li>Create AI-generated images for blogs</li><li>Rewrite text to make it 100% unique</li><li>Replace brand names without breaking context</li></ul></div>
+    <div class="card prom-card rv d2" data-tilt><div class="cc tl"></div><div class="cc br"></div><div class="prom-title">&#9889; AI TOOLS EQUIPPED</div><p style="color:rgba(220,240,255,0.92);font-size:.85rem;line-height:1.8;margin-bottom:1.2rem">Developing and refining AI prompts to create SEO-optimised content, keyword-rich blog ideas, and AI-generated visuals that enhance website performance.</p><div class="ai-tags"><span class="aitag">ChatGPT</span><span class="aitag">Gemini</span><span class="aitag">Perplexity</span><span class="aitag">Canva AI</span><span class="aitag">Grammarly</span></div></div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════ DESIGNS ═══════ -->
+<section id="designs">
+<div class="container">
+  <span class="stag rv">DESIGN VAULT</span>
+  <h2 class="stitle rv d1">My <span class="gtext">Designs</span></h2>
+  <p class="rv d2" style="color:rgba(220,240,255,0.92);max-width:600px;margin-bottom:2rem;font-size:.92rem">Website banners, social media posts, and blog banners crafted for <strong style="color:var(--c1)">Zafigem.com</strong> (Singapore), <strong style="color:var(--c2)">Zentro Tech</strong> (Dubai), and <strong style="color:#27ae60">DreamBIG.ae</strong> (UAE).</p>
+  <div style="width:50px;height:2px;background:linear-gradient(90deg,var(--c1),var(--c2));margin-bottom:2.5rem;box-shadow:0 0 10px var(--c1)" class="rv d2"></div>
+  <div class="dfilt rv d3">
+    <button class="dfbtn on" data-filter="all">&#11042; ALL</button>
+    <button class="dfbtn" data-filter="banner">&#127760; BANNERS</button>
+    <button class="dfbtn" data-filter="social">&#128241; SOCIAL</button>
+    <button class="dfbtn" data-filter="blog">&#128221; BLOG</button>
+  </div>
+
+  <!-- ZAFIGEM -->
+  <div class="dgroup rv d2">
+    <div class="dg-hd"><div class="dg-hex" style="background:var(--c1)"></div><div><div class="dg-brand">ZAFIGEM.COM &bull; SINGAPORE</div><div class="dg-sub">Website Banners — Gemstone Product Categories</div></div><div class="dg-cnt">16 BANNERS</div></div>
+    <div class="dgrid">
+      <div class="dc rv d1" data-cat="banner"><div class="dc-img"><img src="images/amethyst-1.png" alt="Amethyst" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/amethyst-1.png" data-title="Amethyst - Website Banner" data-client="Zafigem.com, Singapore">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#9b59b6"></div><div class="dc-name">Amethyst</div><div class="dc-type">Banner</div></div></div>
+      <div class="dc rv d1" data-cat="banner"><div class="dc-img"><img src="images/ametrine.png" alt="Ametrine" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/ametrine.png" data-title="Ametrine - Website Banner" data-client="Zafigem.com, Singapore">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#a569bd"></div><div class="dc-name">Ametrine</div><div class="dc-type">Banner</div></div></div>
+      <div class="dc rv d2" data-cat="banner"><div class="dc-img"><img src="images/apatite.png" alt="Apatite" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/apatite.png" data-title="Apatite - Website Banner" data-client="Zafigem.com, Singapore">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#1abc9c"></div><div class="dc-name">Apatite</div><div class="dc-type">Banner</div></div></div>
+      <div class="dc rv d2" data-cat="banner"><div class="dc-img"><img src="images/aquamarine.png" alt="Aquamarine" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/aquamarine.png" data-title="Aquamarine - Website Banner" data-client="Zafigem.com, Singapore">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#5dade2"></div><div class="dc-name">Aquamarine</div><div class="dc-type">Banner</div></div></div>
+      <div class="dc rv d3" data-cat="banner"><div class="dc-img"><img src="images/bi-color-tourmaline.png" alt="Bi Color Tourmaline" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/bi-color-tourmaline.png" data-title="Bi Color Tourmaline - Website Banner" data-client="Zafigem.com, Singapore">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:linear-gradient(90deg,#e74c3c,#27ae60)"></div><div class="dc-name">Bi Color Tourmaline</div><div class="dc-type">Banner</div></div></div>
+      <div class="dc rv d3" data-cat="banner"><div class="dc-img"><img src="images/Chrysoberyl.png" alt="Chrysoberyl" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/Chrysoberyl.png" data-title="Chrysoberyl - Website Banner" data-client="Zafigem.com, Singapore">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#d4ac0d"></div><div class="dc-name">Chrysoberyl</div><div class="dc-type">Banner</div></div></div>
+      <div class="dc rv d1" data-cat="banner"><div class="dc-img"><img src="images/Citrine.png" alt="Citrine" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/Citrine.png" data-title="Citrine - Website Banner" data-client="Zafigem.com, Singapore">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#e67e22"></div><div class="dc-name">Citrine</div><div class="dc-type">Banner</div></div></div>
+      <div class="dc rv d1" data-cat="banner"><div class="dc-img"><img src="images/Color-Diamond.png" alt="Color Diamond" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/Color-Diamond.png" data-title="Color Diamond - Website Banner" data-client="Zafigem.com, Singapore">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:linear-gradient(90deg,#27ae60,#3498db,#e74c3c)"></div><div class="dc-name">Color Diamond</div><div class="dc-type">Banner</div></div></div>
+      <div class="dc rv d2" data-cat="banner"><div class="dc-img"><img src="images/Diamonds.png" alt="Diamonds" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/Diamonds.png" data-title="Diamonds - Website Banner" data-client="Zafigem.com, Singapore">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#bdc3c7"></div><div class="dc-name">Diamonds</div><div class="dc-type">Banner</div></div></div>
+      <div class="dc rv d2" data-cat="banner"><div class="dc-img"><img src="images/Emerald.png" alt="Emerald" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/Emerald.png" data-title="Emerald - Website Banner" data-client="Zafigem.com, Singapore">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#1e8449"></div><div class="dc-name">Emerald</div><div class="dc-type">Banner</div></div></div>
+      <div class="dc rv d3" data-cat="banner"><div class="dc-img"><img src="images/Fluorite.png" alt="Fluorite" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/Fluorite.png" data-title="Fluorite - Website Banner" data-client="Zafigem.com, Singapore">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:linear-gradient(90deg,#8e44ad,#1abc9c)"></div><div class="dc-name">Fluorite</div><div class="dc-type">Banner</div></div></div>
+      <div class="dc rv d3" data-cat="banner"><div class="dc-img"><img src="images/Garnet.png" alt="Garnet" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/Garnet.png" data-title="Garnet - Website Banner" data-client="Zafigem.com, Singapore">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#922b21"></div><div class="dc-name">Garnet</div><div class="dc-type">Banner</div></div></div>
+      <div class="dc rv d1" data-cat="banner"><div class="dc-img"><img src="images/Moissanite.png" alt="Moissanite" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/Moissanite.png" data-title="Moissanite - Website Banner" data-client="Zafigem.com, Singapore">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:linear-gradient(90deg,#ecf0f1,#5dade2)"></div><div class="dc-name">Moissanite</div><div class="dc-type">Banner</div></div></div>
+      <div class="dc rv d2" data-cat="banner"><div class="dc-img"><img src="images/Rubellite.png" alt="Rubellite" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/Rubellite.png" data-title="Rubellite - Website Banner" data-client="Zafigem.com, Singapore">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#c0392b"></div><div class="dc-name">Rubellite</div><div class="dc-type">Banner</div></div></div>
+      <div class="dc rv d2" data-cat="banner"><div class="dc-img"><img src="images/Tsavorite.png" alt="Tsavorite" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/Tsavorite.png" data-title="Tsavorite - Website Banner" data-client="Zafigem.com, Singapore">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#00ff88"></div><div class="dc-name">Tsavorite</div><div class="dc-type">Banner</div></div></div>
+      <div class="dc rv d3" data-cat="banner"><div class="dc-img"><img src="images/Yellow Sapphire.png" alt="Yellow Sapphire" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/Yellow Sapphire.png" data-title="Yellow Sapphire - Website Banner" data-client="Zafigem.com, Singapore">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#f1c40f"></div><div class="dc-name">Yellow Sapphire</div><div class="dc-type">Banner</div></div></div>
+    </div>
+  </div>
+
+  <!-- ZENTRO -->
+  <div class="dgroup rv d3" style="margin-top:2.5rem">
+    <div class="dg-hd"><div class="dg-hex" style="background:var(--c2)"></div><div><div class="dg-brand">ZENTRO TECH &bull; ZENTROA, DUBAI</div><div class="dg-sub">Social Media Posts &amp; Blog Post Banners</div></div><div class="dg-cnt" style="color:var(--c2);border-color:rgba(255,0,102,.2);background:rgba(255,0,102,.04)">10 DESIGNS</div></div>
+    <div class="dgrid soc-grid">
+      <div class="dc rv d1" data-cat="social"><div class="dc-img soc-img"><img src="images/1.jpg" alt="Women's Day" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/1.jpg" data-title="International Women's Day - Social Post" data-client="Zentro Tech, Dubai">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:linear-gradient(135deg,#ff69b4,#9b59b6)"></div><div><div class="dc-name">Women's Day</div><div class="dc-plat">Instagram &bull; Facebook</div></div><div class="dc-type" style="color:var(--c2)">Social</div></div></div>
+      <div class="dc rv d2" data-cat="social"><div class="dc-img soc-img"><img src="images/2.jpg" alt="Eid ul-Fitr" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/2.jpg" data-title="Eid ul-Fitr Wishes - Social Post" data-client="Zentro Tech, Dubai">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#5dade2"></div><div><div class="dc-name">Eid ul-Fitr</div><div class="dc-plat">Instagram &bull; Facebook</div></div><div class="dc-type" style="color:var(--c2)">Social</div></div></div>
+      <div class="dc rv d3" data-cat="social"><div class="dc-img soc-img"><img src="images/3.jpg" alt="Labour Day" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/3.jpg" data-title="International Labour Day - Social Post" data-client="Zentro Tech, Dubai">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#2980b9"></div><div><div class="dc-name">Labour Day</div><div class="dc-plat">Instagram &bull; Facebook</div></div><div class="dc-type" style="color:var(--c2)">Social</div></div></div>
+   
+      <div class="dc rv d4" data-cat="social"><div class="dc-img soc-img"><img src="images/4.jpg" alt="Printer Rental Post" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/4.jpg" data-title="Printer Rental - Social Post"  data-client="Zentro Tech, Dubai">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#2980b9"></div><div><div class="dc-name">Printer Rental</div><div class="dc-plat">Instagram &bull; Facebook</div></div><div class="dc-type" style="color:var(--c2)">Social</div></div></div>
+      <div class="dc rv d3" data-cat="social"><div class="dc-img soc-img"><img src="images/5.jpg" alt="Printer Rental Post" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/5.jpg" data-title="Printer Rental - Social Post"  data-client="Zentro Tech, Dubai">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#2980b9"></div><div><div class="dc-name">Printer Rental</div><div class="dc-plat">Instagram &bull; Facebook</div></div><div class="dc-type" style="color:var(--c2)">Social</div></div></div>
+      <div class="dc rv d3" data-cat="social"><div class="dc-img soc-img"><img src="images/6.jpg" alt="Printer Rental Post" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/6.jpg" data-title="Printer Rental - Social Post"  data-client="Zentro Tech, Dubai">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#2980b9"></div><div><div class="dc-name">Printer Rental</div><div class="dc-plat">Instagram &bull; Facebook</div></div><div class="dc-type" style="color:var(--c2)">Social</div></div></div>
+      <div class="dc rv d3" data-cat="social"><div class="dc-img soc-img"><img src="images/7.jpg" alt="Printer Rental Post" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/7.jpg" data-title="Printer Rental - Social Post"  data-client="Zentro Tech, Dubai">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#2980b9"></div><div><div class="dc-name">Printer Rental</div><div class="dc-plat">Instagram &bull; Facebook</div></div><div class="dc-type" style="color:var(--c2)">Social</div></div></div>
+      <div class="dc rv d3" data-cat="social"><div class="dc-img soc-img"><img src="images/8.jpg" alt="Printer Rental Post" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/8.jpg" data-title="Printer Rental - Social Post"  data-client="Zentro Tech, Dubai">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#2980b9"></div><div><div class="dc-name">Printer Rental</div><div class="dc-plat">Instagram &bull; Facebook</div></div><div class="dc-type" style="color:var(--c2)">Social</div></div></div>
+      <div class="dc rv d3" data-cat="social"><div class="dc-img soc-img"><img src="images/9.jpg" alt="Printer Rental Post" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/8.jpg" data-title="Printer Rental - Social Post"  data-client="Zentro Tech, Dubai">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#2980b9"></div><div><div class="dc-name">Printer Rental</div><div class="dc-plat">Instagram &bull; Facebook</div></div><div class="dc-type" style="color:var(--c2)">Social</div></div></div>
+
+      <div class="dc rv d3" data-cat="social"><div class="dc-img soc-img"><img src="images/10.jpg" alt="IDEAS Packaging Post" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/10.jpg" data-title="IDEAS Packaging - Social Post" data-client="IDEAS Packaging">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#e60023"></div><div><div class="dc-name">IDEAS Packaging</div><div class="dc-plat">Instagram &bull; Facebook</div></div><div class="dc-type" style="color:var(--c2)">Social</div></div></div>
+      <div class="dc rv d3" data-cat="social"><div class="dc-img soc-img"><img src="images/11.jpg" alt="IDEAS Packaging Post" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/11.jpg" data-title="IDEAS Packaging - Social Post" data-client="IDEAS Packaging">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#e60023"></div><div><div class="dc-name">IDEAS Packaging</div><div class="dc-plat">Instagram &bull; Facebook</div></div><div class="dc-type" style="color:var(--c2)">Social</div></div></div>
+      <div class="dc rv d3" data-cat="social"><div class="dc-img soc-img"><img src="images/12.jpg" alt="IDEAS Packaging Post" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/12.jpg" data-title="IDEAS Packaging - Social Post" data-client="IDEAS Packaging">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#e60023"></div><div><div class="dc-name">IDEAS Packaging</div><div class="dc-plat">Instagram &bull; Facebook</div></div><div class="dc-type" style="color:var(--c2)">Social</div></div></div>
+      <div class="dc rv d3" data-cat="social"><div class="dc-img soc-img"><img src="images/13.jpg" alt="IDEAS Packaging Post" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/13.jpg" data-title="IDEAS Packaging - Social Post" data-client="IDEAS Packaging">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#e60023"></div><div><div class="dc-name">IDEAS Packaging</div><div class="dc-plat">Instagram &bull; Facebook</div></div><div class="dc-type" style="color:var(--c2)">Social</div></div></div>
+      <div class="dc rv d3" data-cat="social"><div class="dc-img soc-img"><img src="images/14.jpg" alt="IDEAS Packaging Post" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/14.jpg" data-title="IDEAS Packaging - Social Post" data-client="IDEAS Packaging">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#e60023"></div><div><div class="dc-name">IDEAS Packaging</div><div class="dc-plat">Instagram &bull; Facebook</div></div><div class="dc-type" style="color:var(--c2)">Social</div></div></div>
+      <div class="dc rv d3" data-cat="social"><div class="dc-img soc-img"><img src="images/15.jpg" alt="IDEAS Packaging Post" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/15.jpg" data-title="IDEAS Packaging - Social Post" data-client="IDEAS Packaging">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#e60023"></div><div><div class="dc-name">IDEAS Packaging</div><div class="dc-plat">Instagram &bull; Facebook</div></div><div class="dc-type" style="color:var(--c2)">Social</div></div></div>
+
+
+
+    </div>
+    <div class="blog-sub-group rv d4">
+      <div class="bsg-hd"><span style="font-size:1.1rem">&#128221;</span><div><div class="bsg-title">Blog Post Banners &mdash; Zentroa.com</div><div class="bsg-sub">7 banners</div></div><div class="dg-cnt" style="color:var(--c3);border-color:rgba(255,238,0,.2);background:rgba(255,238,0,.04);margin-left:auto">7</div></div>
+      <div class="dgrid blog-dgrid">
+        <div class="dc rv d1" data-cat="blog"><div class="dc-img blog-img"><img src="images/10_Easy_Ways_to_Keep_Your_Website_Running_Smoothly.png" alt="Website" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/10_Easy_Ways_to_Keep_Your_Website_Running_Smoothly.png" data-title="10 Easy Ways to Keep Your Website Running Smoothly" data-client="Zentroa.com, Dubai">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#e74c3c"></div><div class="dc-name" style="font-size:.58rem">Website Running Smoothly</div><div class="dc-type" style="color:var(--c3)">Blog</div></div></div>
+        <div class="dc rv d1" data-cat="blog"><div class="dc-img blog-img"><img src="images/top_10_construction_companies_in_uae.png" alt="Construction" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/top_10_construction_companies_in_uae.png" data-title="Top 10 Construction Companies in UAE" data-client="Zentroa.com, Dubai">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#e74c3c"></div><div class="dc-name" style="font-size:.58rem">Construction Co. UAE</div><div class="dc-type" style="color:var(--c3)">Blog</div></div></div>
+        <div class="dc rv d2" data-cat="blog"><div class="dc-img blog-img"><img src="images/Top_10_Office_Furniture_Companies_In_Dubai.png" alt="Office Furniture" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/Top_10_Office_Furniture_Companies_In_Dubai.png" data-title="Top 10 Office Furniture Companies in Dubai" data-client="Zentroa.com, Dubai">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#e74c3c"></div><div class="dc-name" style="font-size:.58rem">Office Furniture Dubai</div><div class="dc-type" style="color:var(--c3)">Blog</div></div></div>
+        <div class="dc rv d2" data-cat="blog"><div class="dc-img blog-img"><img src="images/TOP_10_Travel_Companies_In_Dubai.png" alt="Travel" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/TOP_10_Travel_Companies_In_Dubai.png" data-title="Top 10 Travel Companies in Dubai" data-client="Zentroa.com, Dubai">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#e74c3c"></div><div class="dc-name" style="font-size:.58rem">Travel Co. Dubai</div><div class="dc-type" style="color:var(--c3)">Blog</div></div></div>
+        <div class="dc rv d3" data-cat="blog"><div class="dc-img blog-img"><img src="images/Top_10_Web_Design_Companies_In_India.png" alt="Web Design India" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/Top_10_Web_Design_Companies_In_India.png" data-title="Top 10 Web Design Companies in India" data-client="Zentroa.com, Dubai">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#e74c3c"></div><div class="dc-name" style="font-size:.58rem">Web Design India</div><div class="dc-type" style="color:var(--c3)">Blog</div></div></div>
+        <div class="dc rv d3" data-cat="blog"><div class="dc-img blog-img"><img src="images/Top_10_Web_Design_Company_In_Coimbatore.png" alt="Web Design Coimbatore" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/Top_10_Web_Design_Company_In_Coimbatore.png" data-title="Top 10 Web Design Company in Coimbatore" data-client="Zentroa.com, Dubai">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#e74c3c"></div><div class="dc-name" style="font-size:.58rem">Web Design Coimbatore</div><div class="dc-type" style="color:var(--c3)">Blog</div></div></div>
+        <div class="dc rv d1" data-cat="blog"><div class="dc-img blog-img"><img src="images/top_10_wordpress_development_companies_in_uae.png" alt="WordPress UAE" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/top_10_wordpress_development_companies_in_uae.png" data-title="Top 10 WordPress Development Companies in UAE" data-client="Zentroa.com, Dubai">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#e74c3c"></div><div class="dc-name" style="font-size:.58rem">WordPress Dev UAE</div><div class="dc-type" style="color:var(--c3)">Blog</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DREAMBIG -->
+  <div class="dgroup rv d2" style="margin-top:2.5rem">
+    <div class="dg-hd"><div class="dg-hex" style="background:#27ae60"></div><div><div class="dg-brand">DREAMBIG.AE &bull; UAE</div><div class="dg-sub">Blog Post Banners &mdash; SEO Blog Featured Images</div></div><div class="dg-cnt" style="color:#27ae60;border-color:rgba(39,174,96,.3);background:rgba(39,174,96,.06)">7 BANNERS</div></div>
+    <div class="dgrid blog-dgrid dreambig-g">
+      <div class="dc green rv d1" data-cat="blog"><div class="dc-img blog-img"><img src="images/top_10_Digital_marketing_company_in_uae.png" alt="Digital Marketing UAE" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/top_10_Digital_marketing_company_in_uae.png" data-title="Top 10 Digital Marketing Companies in UAE" data-client="DreamBIG.ae, UAE">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#27ae60"></div><div class="dc-name" style="font-size:.58rem">Digital Marketing UAE</div><div class="dc-type" style="color:#27ae60">Blog</div></div></div>
+      <div class="dc green rv d1" data-cat="blog"><div class="dc-img blog-img"><img src="images/Top_10_Car_Rental_Companies_In_Abu_Dhabi.png" alt="Car Rental Abu Dhabi" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/Top_10_Car_Rental_Companies_In_Abu_Dhabi.png" data-title="Top 10 Car Rental Companies in Abu Dhabi" data-client="DreamBIG.ae, UAE">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#27ae60"></div><div class="dc-name" style="font-size:.58rem">Car Rental Abu Dhabi</div><div class="dc-type" style="color:#27ae60">Blog</div></div></div>
+      <div class="dc green rv d2" data-cat="blog"><div class="dc-img blog-img"><img src="images/Top_10_car_rental_companies_in_Dubai.png" alt="Car Rental Dubai" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/Top_10_car_rental_companies_in_Dubai.png" data-title="Top 10 Car Rental Companies in Dubai" data-client="DreamBIG.ae, UAE">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#27ae60"></div><div class="dc-name" style="font-size:.58rem">Car Rental Dubai</div><div class="dc-type" style="color:#27ae60">Blog</div></div></div>
+      <div class="dc green rv d2" data-cat="blog"><div class="dc-img blog-img"><img src="images/Top_10_Car_Rental_Companies_In_Sharjah.png" alt="Car Rental Sharjah" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/Top_10_Car_Rental_Companies_In_Sharjah.png" data-title="Top 10 Car Rental Companies in Sharjah" data-client="DreamBIG.ae, UAE">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#27ae60"></div><div class="dc-name" style="font-size:.58rem">Car Rental Sharjah</div><div class="dc-type" style="color:#27ae60">Blog</div></div></div>
+      <div class="dc green rv d3" data-cat="blog"><div class="dc-img blog-img"><img src="images/Top_10_Cleaning_Companies_In_Dubai.png" alt="Cleaning Dubai" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/Top_10_Cleaning_Companies_In_Dubai.png" data-title="Top 10 Cleaning Companies in Dubai" data-client="DreamBIG.ae, UAE">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#27ae60"></div><div class="dc-name" style="font-size:.58rem">Cleaning Co. Dubai</div><div class="dc-type" style="color:#27ae60">Blog</div></div></div>
+      <div class="dc green rv d3" data-cat="blog"><div class="dc-img blog-img"><img src="images/Top_10_Mobile_App_Development_Companies_In_UAE.png" alt="Mobile App UAE" loading="lazy"/><div class="dc-ov"><button class="dc-view" data-img="images/Top_10_Mobile_App_Development_Companies_In_UAE.png" data-title="Top 10 Mobile App Development Companies in UAE" data-client="DreamBIG.ae, UAE">&#8663; VIEW</button></div></div><div class="dc-info"><div class="dc-dot" style="background:#27ae60"></div><div class="dc-name" style="font-size:.58rem">Mobile App Dev UAE</div><div class="dc-type" style="color:#27ae60">Blog</div></div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lbox">
+  <button class="lb-x" id="lb-x">&#10005;</button>
+  <button class="lb-nav-btn lb-prev" id="lb-prev">&#8249;</button>
+  <button class="lb-nav-btn lb-next" id="lb-next">&#8250;</button>
+  <div class="lb-in"><img id="lb-img" src="" alt=""/><div><div class="lb-title-txt" id="lb-title-txt"></div><div class="lb-client-txt" id="lb-client-txt"></div></div></div>
+  <div class="lb-ctr" id="lb-ctr"></div>
+</div>
+
+<!-- ═══════ CONTACT ═══════ -->
+<section id="contact">
+<div class="container">
+  <span class="stag rv">CONTACT</span>
+  <h2 class="stitle rv d1">Get In <span class="gtext">Touch</span></h2>
+  <div class="sline rv d2"></div>
+  <div class="contact-grid">
+    <div class="rv-l">
+      <div class="ch3">Ready to <span class="gtext">Connect?</span></div>
+      <div class="cp">I'm an immediate joiner open to roles in digital marketing, SEO, WordPress management, and banner design. I'm available for full-time roles in digital marketing, SEO, WordPress, and design.</div>
+      <div class="c-items">
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=mushthaq024@gmail.com" target="_blank" class="c-item"> <div class="c-hex-ico">&#128231;</div><div> <div class="c-lbl">EMAIL</div> <div class="c-val">mushthaq024@gmail.com</div> </div> </a> 
+<a href="https://www.linkedin.com/in/m-mushthaq" target="_blank" class="c-item"><div class="c-hex-ico">&#128188;</div><div><div class="c-lbl">LINKEDIN</div><div class="c-val">linkedin.com/in/m-mushthaq</div></div></a>      
+<a href="tel:+919750669713" class="c-item"><div class="c-hex-ico">&#128222;</div><div><div class="c-lbl">MOBILE / WHATSAPP</div><div class="c-val">+91 97506 69713</div></div></a>
+        <a href="Mushthaq_Resume.pdf" class="c-item"><div class="c-hex-ico">&#128196;</div><div><div class="c-lbl">RESUME</div><div class="c-val">Download CV</div></div></a>
+      </div>
+      <div class="avail-hud"><div class="ap"></div><div><strong>IMMEDIATE JOINER</strong><span>Actively Seeking Full-Time Opportunities</span></div></div>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/m-mushthaq" target="_blank" class="soc">&#128188;</a>
+        <a href="https://wa.me/919750669713" target="_blank" class="soc">&#128172;</a>
+        <a href="/cdn-cgi/l/email-protection#721f07011a061a130342404632151f131b1e5c111d1f" class="soc">&#128231;</a>
+        <a href="#" class="soc">&#128248;</a>
+      </div>
+    </div>
+    <div class="rv-r d2">
+      <div class="card fcard"><div class="cc tl"></div><div class="cc tr"></div><div class="cc bl"></div><div class="cc br"></div>
+        <div class="ft">&#128225; CONTACT ME</div>
+        <div style="display:flex;flex-direction:column;gap:1rem;margin-top:1rem">
+          <a href="mailto:mushthaq024@gmail.com" class="c-item">
+            <div class="c-ico">&#128231;</div>
+            <div><div class="c-lbl">EMAIL ME</div><div class="c-val">mushthaq024@gmail.com</div></div>
+          </a>
+          <a href="https://wa.me/919750669713" target="_blank" class="c-item">
+            <div class="c-ico">&#128172;</div>
+            <div><div class="c-lbl">WHATSAPP</div><div class="c-val">+91 97506 69713</div></div>
+          </a>
+          <a href="https://www.linkedin.com/in/m-mushthaq" target="_blank" class="c-item">
+            <div class="c-ico">&#128188;</div>
+            <div><div class="c-lbl">LINKEDIN</div><div class="c-val">linkedin.com/in/m-mushthaq</div></div>
+          </a>
+          <a href="Mushthaq_Resume.pdf" target="_blank" class="c-item">
+            <div class="c-ico">&#128196;</div>
+            <div><div class="c-lbl">RESUME</div><div class="c-val">Download CV (PDF)</div></div>
+          </a>
+        </div>
+        <div style="margin-top:2rem;padding:1.2rem;background:rgba(0,255,204,0.04);border:1px solid rgba(0,255,204,0.12);border-radius:8px;text-align:center">
+          <div style="font-family:var(--fd);font-size:.7rem;color:var(--c1);letter-spacing:.15em;margin-bottom:.5rem">&#9889; RESPONSE TIME</div>
+          <div style="font-family:var(--fm);font-size:.78rem;color:var(--muted)">I reply within <strong style="color:var(--c3)">24 hours</strong> on Email &amp; WhatsApp</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
